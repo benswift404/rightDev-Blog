@@ -1,0 +1,24 @@
+<h1 class="post_link">RightDev's Blog</h1>
+
+  <% @posts.each do |post| %>
+      <div class="post">
+        <p>
+          <strong><%= post.title %></strong>
+        </p>
+
+        <p>
+          <%= post.text %>
+        </p>
+        <p>
+          <%= link_to 'Show', post %>
+          <%= link_to 'Edit', edit_post_path(post) %>
+          <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </p>
+      </div>
+  <% end %>
+
+<br>
+
+<div class="post_link">
+  <%= link_to 'New Post', new_post_path %>
+</div>
